@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:wcloud/model/demo_tabs.dart';
 import 'package:wcloud/pages/basic_widgets/pet_card.dart';
 
@@ -30,6 +31,8 @@ class _BasicWidgetsPage extends State<BasicWidgetsPage>
   @override
   void initState() {
     super.initState();
+
+    initPlatformState();
     this.tabController = new TabController(length: demos.length, vsync: this);
   }
 
@@ -41,5 +44,12 @@ class _BasicWidgetsPage extends State<BasicWidgetsPage>
       tabScrollable: false,
       tabController: this.tabController,
     );
+  }
+
+  void initPlatformState() async {
+    bool res = await FlutterAppBadger.isAppBadgeSupported();
+    if (res) {
+      FlutterAppBadger.updateBadgeCount(999999);
+    }
   }
 }
