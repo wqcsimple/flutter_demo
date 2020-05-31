@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wcloud/pages/basic_widgets/index.dart';
+import 'package:wcloud/pages/list_view/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       home: HomePage(),
       routes: {
-        'basic_widgets': (context) => BasicWidgetsPage()
+        'basic_widgets': (context) => BasicWidgetsPage(),
+        'list_view': (context) => ListViewDemo(),
       },
     );
   }
@@ -38,11 +40,11 @@ const DEMOS = [
     description: '容器、行、列、文字、图片、图标等最常用组件，是构成界面的基础',
     routeName: 'basic_widgets',
   ),
-//  Demo(
-//    title: 'ListView组件',
-//    description: '滚动型容器列表组件，支持下拉刷新，上拉加载等交互操作',
-//    routeName: 'list_view',
-//  ),
+  Demo(
+    title: 'ListView组件',
+    description: '滚动型容器列表组件，支持下拉刷新，上拉加载等交互操作',
+    routeName: 'list_view',
+  ),
 //  Demo(
 //    title: 'GridView组件',
 //    description: '网格布局，支持自定义每行显示的列数以及每一格的宽高比例',
