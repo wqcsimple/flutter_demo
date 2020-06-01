@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wcloud/pages/basic_widgets/index.dart';
 import 'package:wcloud/pages/grid_view/index.dart';
 import 'package:wcloud/pages/list_view/index.dart';
+import 'package:wcloud/pages/test/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'basic_widgets': (context) => BasicWidgetsPage(),
         'list_view': (context) => ListViewDemo(),
-        'grid_view': (context) => GridViewDemo()
+        'grid_view': (context) => GridViewDemo(),
+        'test_view': (context) => TestViewDemo(),
       },
     );
   }
@@ -62,6 +64,11 @@ const DEMOS = [
 //    description: '自定义高级滚动组件，float、snap、pinned效果任你组合',
 //    routeName: 'sliver_widgets',
 //  ),
+  Demo(
+    title: '练习页面',
+    description: '',
+    routeName: 'test_view',
+  ),
 ];
 
 class Demo {
