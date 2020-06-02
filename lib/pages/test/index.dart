@@ -79,9 +79,19 @@ class _TestViewDemo extends State<TestViewDemo> {
   }
 
   Widget renderBody() {
-    return Container(
+    return Expanded(
+        child: Container(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-      child: CaseCard(),
-    );
+      child: ListView.separated(
+          separatorBuilder: (context, index) {
+            return Container(
+              height: 10,
+            );
+          },
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return CaseCard();
+          }),
+    ));
   }
 }
